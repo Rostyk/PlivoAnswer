@@ -5,8 +5,8 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
  
 app.get('/notes', function(req, res) {
-    var from = req.query.from;
-    res.header('Content-Type','text/xml').send('<yo>' + from + '</yo>');
+    var to = req.query.to;
+    res.header('Content-Type','text/xml').send('<Response><Dial callerId="123123"><Number>' + to +'</Number></Dial></Response>');
 })
  
 app.listen(app.get('port'), function() {
